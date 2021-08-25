@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>pract.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+pract.py</font>
+</center></td></tr></table>
+<pre><span class="s0">from </span><span class="s1">tkinter </span><span class="s0">import </span><span class="s1">*</span>
+<span class="s0">from </span><span class="s1">math </span><span class="s0">import </span><span class="s1">*</span>
+
+<span class="s0">def </span><span class="s1">calcular():</span>
+    <span class="s1">dato_altura = valorAltura.get()</span>
+    <span class="s1">dato_radio = valorRadio.get()</span>
+    <span class="s1">Res_calcular = round(pi * (dato_radio**</span><span class="s2">2</span><span class="s1">) * dato_altura</span><span class="s0">,</span><span class="s2">3</span><span class="s1">)</span>
+    <span class="s1">print(</span><span class="s3">&quot;Respuesta: &quot;</span><span class="s0">, </span><span class="s1">Res_calcular</span><span class="s0">, </span><span class="s3">&quot;cm2&quot;</span><span class="s1">)</span>
+    <span class="s1">valorRespuesta.set(str(Res_calcular))</span>
+
+<span class="s3">&quot;&quot;&quot;Creo la ventana&quot;&quot;&quot;</span>
+
+<span class="s1">ven_calcular = Tk()</span>
+<span class="s1">ven_calcular.title(</span><span class="s3">&quot;Calcular el Volumen de Cilindro&quot;</span><span class="s1">)</span>
+<span class="s1">ven_calcular.geometry(</span><span class="s3">&quot;650x250&quot;</span><span class="s1">)</span>
+<span class="s3">&quot;&quot;&quot;_________________________________________________&quot;&quot;&quot;</span>
+
+<span class="s1">titulo = Label(ven_calcular</span><span class="s0">, </span><span class="s1">text=</span><span class="s3">&quot;CALCULAR El VOLUMEN DE UN CILINDRO&quot;</span><span class="s0">, </span><span class="s1">width=</span><span class="s2">50</span><span class="s0">, </span><span class="s1">height=</span><span class="s2">2</span><span class="s0">, </span><span class="s1">bg=</span><span class="s3">&quot;red&quot;</span><span class="s0">, </span><span class="s1">fg=</span><span class="s3">&quot;black&quot;</span><span class="s1">)</span>
+<span class="s1">titulo.place(x=</span><span class="s2">50</span><span class="s0">,</span><span class="s1">y=</span><span class="s2">15</span><span class="s1">)</span>
+
+<span class="s1">espa = Label(ven_calcular</span><span class="s0">, </span><span class="s1">text=</span><span class="s3">&quot; &quot;</span><span class="s0">,</span><span class="s1">height=</span><span class="s2">5 </span><span class="s1">)</span>
+<span class="s1">espa.grid(column=</span><span class="s2">1</span><span class="s0">, </span><span class="s1">row=</span><span class="s2">2</span><span class="s1">)</span>
+
+<span class="s1">altura = Label(ven_calcular</span><span class="s0">, </span><span class="s1">text=</span><span class="s3">&quot;Ingrese la altura: &quot;</span><span class="s0">, </span><span class="s1">fg=</span><span class="s3">&quot;blue&quot;</span><span class="s1">)</span>
+<span class="s1">altura.grid(column=</span><span class="s2">1</span><span class="s0">, </span><span class="s1">row=</span><span class="s2">3</span><span class="s1">)</span>
+
+<span class="s1">radio = Label(ven_calcular</span><span class="s0">, </span><span class="s1">text=</span><span class="s3">&quot;Ingrese el radio: &quot;</span><span class="s0">, </span><span class="s1">fg=</span><span class="s3">&quot;blue&quot;</span><span class="s1">)</span>
+<span class="s1">radio.grid(column=</span><span class="s2">1</span><span class="s0">, </span><span class="s1">row=</span><span class="s2">4</span><span class="s1">)</span>
+
+<span class="s1">resp = Label(ven_calcular</span><span class="s0">, </span><span class="s1">text=</span><span class="s3">&quot;RESPUESTA:&quot;</span><span class="s0">, </span><span class="s1">fg=</span><span class="s3">&quot;black&quot;</span><span class="s1">)</span>
+<span class="s1">resp.place(x=</span><span class="s2">20</span><span class="s0">, </span><span class="s1">y=</span><span class="s2">140</span><span class="s1">)</span>
+
+<span class="s1">cm3 = Label(ven_calcular</span><span class="s0">, </span><span class="s1">text=</span><span class="s3">&quot;CM3&quot;</span><span class="s0">, </span><span class="s1">fg=</span><span class="s3">&quot;black&quot;</span><span class="s1">)</span>
+<span class="s1">cm3.place(x=</span><span class="s2">210</span><span class="s0">, </span><span class="s1">y=</span><span class="s2">140</span><span class="s1">)</span>
+
+<span class="s1">valorAltura = DoubleVar()</span>
+<span class="s1">Caja_altura = Entry(ven_calcular</span><span class="s0">, </span><span class="s1">width=</span><span class="s2">20</span><span class="s0">, </span><span class="s1">textvariable=valorAltura)</span>
+<span class="s1">Caja_altura.grid(column=</span><span class="s2">2</span><span class="s0">, </span><span class="s1">row=</span><span class="s2">3</span><span class="s1">)</span>
+
+<span class="s1">valorRadio = DoubleVar()</span>
+<span class="s1">Caja_radio = Entry(ven_calcular</span><span class="s0">, </span><span class="s1">width=</span><span class="s2">20</span><span class="s0">, </span><span class="s1">textvariable=valorRadio)</span>
+<span class="s1">Caja_radio.grid(column=</span><span class="s2">2</span><span class="s0">, </span><span class="s1">row=</span><span class="s2">4</span><span class="s1">)</span>
+
+<span class="s1">valorRespuesta = DoubleVar()</span>
+<span class="s1">Caja_res = Entry(ven_calcular</span><span class="s0">, </span><span class="s1">width=</span><span class="s2">17</span><span class="s0">, </span><span class="s1">textvariable=valorRespuesta)</span>
+<span class="s1">Caja_res.place(x=</span><span class="s2">100</span><span class="s0">, </span><span class="s1">y=</span><span class="s2">140</span><span class="s1">)</span>
+
+<span class="s1">boton_cal = Button(ven_calcular</span><span class="s0">, </span><span class="s1">text=</span><span class="s3">&quot;CALCULAR&quot;</span><span class="s0">, </span><span class="s1">fg=</span><span class="s3">&quot;white&quot;</span><span class="s0">, </span><span class="s1">bg=</span><span class="s3">&quot;black&quot;</span><span class="s0">, </span><span class="s1">width=</span><span class="s2">15</span><span class="s0">, </span><span class="s1">height=</span><span class="s2">2</span><span class="s0">, </span><span class="s1">command=calcular)</span>
+<span class="s1">boton_cal.place(x=</span><span class="s2">260</span><span class="s0">, </span><span class="s1">y=</span><span class="s2">80</span><span class="s1">)</span>
+
+<span class="s1">boton_salir = Button(ven_calcular</span><span class="s0">, </span><span class="s1">text=</span><span class="s3">&quot;SALIR&quot;</span><span class="s0">, </span><span class="s1">fg=</span><span class="s3">&quot;white&quot;</span><span class="s0">, </span><span class="s1">bg=</span><span class="s3">&quot;black&quot;</span><span class="s0">, </span><span class="s1">width=</span><span class="s2">15</span><span class="s0">, </span><span class="s1">height=</span><span class="s2">2</span><span class="s0">, </span><span class="s1">command=quit)</span>
+<span class="s1">boton_salir.place(x=</span><span class="s2">260</span><span class="s0">, </span><span class="s1">y=</span><span class="s2">150</span><span class="s1">)</span>
+
+<span class="s3">&quot;&quot;&quot;______________________IMAGEN___________________________&quot;&quot;&quot;</span>
+<span class="s1">imagen_cilindro = PhotoImage(file=</span><span class="s3">&quot;cilindro.gif&quot;</span><span class="s1">)</span>
+<span class="s1">etiqueta_foto = Label(ven_calcular</span><span class="s0">, </span><span class="s1">image=imagen_cilindro</span><span class="s0">, </span><span class="s1">width=</span><span class="s2">250</span><span class="s0">, </span><span class="s1">height=</span><span class="s2">300</span><span class="s1">)</span>
+<span class="s1">etiqueta_foto.image = imagen_cilindro</span>
+<span class="s1">etiqueta_foto.place(x=</span><span class="s2">400</span><span class="s0">, </span><span class="s1">y=</span><span class="s2">5</span><span class="s1">)</span>
+
+<span class="s1">ven_calcular.mainloop()</span>
+</pre>
+</body>
