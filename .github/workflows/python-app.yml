@@ -35,10 +35,10 @@ jobs:
       run: |
         pytest
         
-    - uses: webtellez/heroku-deploy@v3.12.12
+    - uses: akhileshns/heroku-deploy@v3.12.12
       with:
         heroku_api_key: ${{secrets.HEROKU_SECRET}}
-        heroku_app_name: "masterpaulinaxyz1"
+        heroku_app_name: "master-cs-yahoo-finance"
         heroku_email:  ${{secrets.HEROKU_EMAIL}}
         buildpack: 'heroku/python'
         usedocker: false
